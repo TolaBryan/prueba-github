@@ -1,0 +1,55 @@
+/******************************************************************************
+
+En un vector de 10 elementos encontrar los dos valores máximos, o sea el más grande y el que
+le siga. Cargue el vector en la declaración. Si inicializa con los datos: 6, 1, 3, 7, 9, 4, 10, 2, 8, 5
+el máximo es 10 en la posición 6 y el segundo es 9 en la posición 4
+
+*******************************************************************************/
+#include <iostream>
+using namespace std;
+
+int maximo(int vdato[],int datosx){
+    int max;
+    max=vdato[0];
+    
+    for(int i=1;i<datosx;++i){
+        while(vdato[i]>max){
+          
+          max=vdato[i];
+            
+        }
+    }
+    return max;
+}
+
+int minimax(int vdato[],int datos, int maximogroso){
+    int minmax;
+    minmax = vdato[0];
+    
+    for(int i=1;i<datos;++i){
+        
+        while(vdato[i]>minmax && vdato[i]<maximogroso){
+            
+            minmax = vdato[i];
+            
+        }
+    }
+    return minmax;
+}
+
+int main()
+{
+    
+    const int datos {10};
+    int vdato[datos] {6, 1, 3, 7, 9, 4, 10, 2, 8, 5};
+    
+    
+    int maximogroso; 
+    maximogroso = maximo(vdato,datos);
+    
+    cout<<"El mas grande de los amximos es: "<<maximo(vdato,datos)<<endl;
+    cout<<"El segundo mas grande es: "<<minimax(vdato,datos,maximogroso)<<endl;
+    
+    
+    return 0;
+}
